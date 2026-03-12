@@ -1,0 +1,217 @@
+import webbrowser
+import random as ran
+import sys as system
+
+name = input("What's your name? ")
+
+confirmation = input(f"Hello {name}, would you like to play hangman? (Y/N) ").upper()
+
+if confirmation == 'Y':
+    
+    x=0
+    
+    while x < 1:
+
+        letter_count = input("Would you like the word to be 3, 4 or 5 letters? (Number) ")
+
+        if letter_count == '3':
+            x =+ 1
+            word_list = ["fix", "ash", "pop", "pat", "pen", "bag", "lay", "fly", "buy", "gap", "win", "pit", "die", "fat", "set", "get", "age", "bat", "cry", "flu"]
+
+        elif letter_count == '4':
+            x =+ 1
+            word_list = ["back", "wood", "hero", "duty",  "jail", "pile", "lump", "load", "idea", "wing", "fear", "gold", "coup", "ball", "self", "risk", "clay", "gasp", "walk", "text"]
+
+        elif letter_count == '5':
+            x =+ 1
+            word_list = ["rugby", "coast", "arise", "grave", "tense", "write", "ranch", "twist", "total", "sound", "raise", "trade", "snack", "leave", "round", "pupil", "crash", "spare", "fraud", "cheek"]
+
+        else:
+            print("Sorry, I don't recgonise that input. Please try again. ")
+
+
+elif confirmation == 'N':
+    webbrowser.open_new_tab("https://trex-runner.com/")
+    system.exit()
+
+word_answer = list(ran.choice(word_list))
+haba = "".join(word_answer)
+
+char_list = list(haba)
+
+guessed_char = []
+
+print('''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''')
+print('')
+guess1 = input("Guess a letter/word. ").lower()
+print("")
+
+guess_list1 = list(guess1)
+
+if guess1 == haba:
+    
+    print("You guessed right!")
+
+    system.exit()
+
+
+
+elif guess1 != haba:
+    common1 = set(char_list) & set(guess_list1)
+    if common1:
+        guessed_char.append(guess1)
+
+        print("You have", *guessed_char)
+    else:
+        print("No shared letters")
+
+print('''  
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''')
+
+print('')
+guess2 = input("Guess a letter/word. ").lower()
+
+guess_list2 = list(guess2)
+
+if guess2 == haba:
+    print("You guessed right!")
+    system.exit()
+
+elif guess2 != haba:
+    common2 = set(char_list) & set(guess_list2)
+    if common2:
+        guessed_char.append(guess2)
+        print("You have: ", *guessed_char)
+    else:
+        print("No shared letters")
+
+print('''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''')
+
+print('')
+guess3 = input("Guess a letter/word. ").lower()
+
+guess_list3 = list(guess3)
+
+if guess3 == haba:
+    print("You guessed right!")
+    system.exit()
+
+elif guess3 != haba:
+    common3 = set(char_list) & set(guess_list3)
+    if common3:
+        guessed_char.append(guess3)
+        print("You have", *guessed_char)
+    else:
+        print("No shared letters")
+
+print('''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''')
+
+
+
+print('')
+guess4 = input("Guess a letter/word. ").lower()
+
+guess_list4 = list(guess4)
+
+if guess4 == haba:
+    print("You guessed right!")
+    system.exit()
+
+elif guess4 != haba:
+    common4 = set(char_list) & set(guess_list4)
+    if common4:
+        guessed_char.append(guess4)
+        print("You have", *guessed_char)
+    else:
+        print("No shared letters")
+
+print('''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''')
+
+print('')
+guess5 = input("Guess a letter/word. ").lower()
+
+guess_list5 = list(guess5)
+
+if guess5 == haba:
+    print("You guessed right!")
+    system.exit()
+
+elif guess5 != haba:
+    common5 = set(char_list) & set(guess_list5)
+    if common5:
+        guessed_char.append(guess5)
+        print("You have", *guessed_char)
+    else:
+        print("No shared letters")
+
+print('''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''')
+
+guess6 = input("Guess a letter/word. ").lower()
+
+guess_list6 = list(guess6)
+
+if guess6 == haba:
+    print("You guessed right!")
+    system.exit()
+
+elif guess6 != haba:
+    common6 = set(char_list) & set(guess_list6)
+    if common6:
+        guessed_char.append(guess6)
+        print("You have", *guessed_char)
+    else:
+        print("No shared letters")
+
+print('''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''')
+
+system.exit(f"You lost! The word was {haba}!")
+
+#im lowkey gay - 4/3/26, 22:44

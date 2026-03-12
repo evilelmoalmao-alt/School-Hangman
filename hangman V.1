@@ -1,0 +1,133 @@
+import webbrowser
+import random as ran
+import sys as system
+
+name = input("What's your name? ")
+
+confirmation = input(f"Hello {name}, would you like to play hangman? (Y/N) ").upper()
+
+if confirmation == 'Y':
+    letter_count = input("Would you like the word to be 3, 4 or 5 letters? (Number) ")
+
+    if letter_count == '3':
+        word_list = ["fix", "ash", "pop", "pat", "pen", "bag", "lay", "fly", "buy", "gap", "win", "pit", "die", "fat", "set", "get", "age", "bat", "cry", "flu"]
+
+    elif letter_count == '4':
+        word_list = ["back", "wood", "hero", "duty",  "jail", "pile", "lump", "load", "idea", "wing", "fear", "gold", "coup", "ball", "self", "risk", "clay", "gasp", "walk", "text"]
+
+    elif letter_count == '5':
+        word_list = ["rugby", "coast", "arise", "grave", "tense", "write", "ranch", "twist" "total", "sound", "raise", "trade", "snack", "leave", "round", "pupil", "crash", "spare", "fraud", "cheek"]
+
+elif confirmation == 'N':
+    webbrowser.open_new_tab("https://trex-runner.com/")
+    system.exit()
+
+elif confirmation == "W":
+    webbrowser.open_new_tab("https://www.nytimes.com/games/wordle/index.html")
+    system.exit()
+
+word_answer = list(ran.choice(word_list))
+haba = "".join(word_answer)
+
+print('''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''')
+print('')
+guess1 = input("Guess a word. ").lower()
+
+if guess1 == haba:
+    print("You guessed right!")
+    system.exit()
+
+print('''  
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''')
+
+print('')
+guess2 = input("Guess a word. ").lower()
+
+if guess2 == haba:
+    print("You guessed right!")
+    system.exit()
+
+print('''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''')
+
+print('')
+guess3 = input("Guess a word. ").lower()
+
+if guess3 == haba:
+    print("You guessed right!")
+    system.exit()
+
+print('''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''')
+
+print('')
+guess4 = input("Guess a word. ").lower()
+
+if guess4 == haba:
+    print("You guessed right!")
+    system.exit()
+
+print('''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''')
+
+print('')
+guess5 = input("Guess a word. ").lower()
+
+if guess5 == haba:
+    print("You guessed right!")
+    system.exit()
+
+print('''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''')
+
+guess6 = input("Guess a word. ").lower()
+
+if guess6 == haba:
+    print("You guessed right!")
+    system.exit()
+
+print('''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''')
